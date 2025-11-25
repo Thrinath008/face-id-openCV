@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual envs
+env/
+venv/
+*.env
+
+# Mac files
+.DS_Store
+
+# Data folders (never commit training data)
+data/
+embeddings/
+
+# Checkpoints / model weights
+*.npy
+*.pt
+*.pth
+*.h5
+
+# Camera output / debug
+output/
+captures/
