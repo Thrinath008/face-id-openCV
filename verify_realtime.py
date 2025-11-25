@@ -32,8 +32,8 @@ while True:
             with torch.no_grad():
                 emb = model(face_tensor).numpy()[0]
 
-            label = "ME" if is_me(emb) else "NOT ME"
-            color = (0,255,0) if label == "ME" else (0,0,255)
+            label = "THRINATH" if is_me(emb) else "Unknown❌"
+            color = (0,255,0) if label == "THRINATH" else (0,0,255)
 
             cv2.rectangle(frame, (x1,y1), (x2,y2), color, 2)
             cv2.putText(frame, label, (x1, y1-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, color, 2)
