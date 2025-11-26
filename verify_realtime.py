@@ -12,11 +12,13 @@ def is_me(emb):
     dist = np.linalg.norm(emb - my_emb)
     return dist < 0.9   # you can tune this threshold
 
-cam = cv2.VideoCapture(0)
+cam = cv2.VideoCapture(1)
+cam.set(cv2.CAP_PROP_FPS, 60)  # target 60fps preview
 print("Starting real-time verification... Press 'q' to quit.")
 
 while True:
     ret, frame = cam.read()
+    cv2.waitKey(1)  # smoother frame pacing
     rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     boxes, _ = detector.detect(rgb)
